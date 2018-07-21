@@ -8,12 +8,11 @@ public class Book extends Publication implements IVisualizable {
 	private String isbn;
 	private boolean read;
 	private int timeRead;
-	private String[] authors;
 	
 	
 	public Book(String title, Date editorialDate, String editorial, String[] authors) {
 		super(title, editorialDate, editorial);
-		this.isbn = isbn;
+		setAuthors(authors);
 	}
 	
 	public int getId(int id) {
@@ -28,12 +27,22 @@ public class Book extends Publication implements IVisualizable {
 		this.isbn = isbn;
 	}
 
-	public boolean isRead() {
-		return read;
+	public String isRead() {
+		String leido = "";
+		if (read == true) {
+			leido = "Sí";
+		}else {
+			leido = "No";
+		}
+		return leido;
 	}
 
 	public void setRead(boolean read) {
 		this.read = read;
+	}
+	
+	public boolean getIsRead() {
+		return read;
 	}
 
 	public int getTimeRead() {
@@ -52,7 +61,7 @@ public class Book extends Publication implements IVisualizable {
 						    "\n Edition Date: " + getEditorialDate() +
 						    "\n Authors: ";
 		for (int i = 0; i < getAuthors().length; i++) {
-			detailBook += "\t" + getAuthors()[i];
+			detailBook += "\t" + getAuthors()[i] + " ";
 		}
 		return detailBook;
 		
@@ -79,6 +88,13 @@ public class Book extends Publication implements IVisualizable {
 	//Genera una lista de películas 
 	public static ArrayList<Book> makeBooksList() {
 		ArrayList<Book> books = new  ArrayList();
+		String[] authors = new String[3];
+		for (int i = 0; i < 3; i++) {
+			authors[i] = "author " + i;
+		}
+		for (int i = 1; i <= 5; i++) {
+			books.add(new Book("Book " + i, new Date(), "editorial " + i, authors));
+		}
 		
 		/*for(int i = 0; i < 4; i++) {
 			books.add(new Book("Book: " + i+1, "Date: "+ Date + "Editorial: " + i+1, "Authors: " + i+1));

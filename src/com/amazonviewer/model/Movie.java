@@ -66,11 +66,16 @@ public class Movie extends Film implements IVisualizable{
 		ArrayList<Movie> movies = new ArrayList();
 		
 		for (int i = 1; i <= 5; i++) {
-			movies.add(new Movie("Movie " + i , "Genre " + i, "Creator " + i, 120+i, (short)(2017+i)));
+			movies.add(new Movie("Movie " + i, "Genero " + i, "Creador " + i, 120+i, (short)(2017+i)));
 		}
 		
 		return movies;
 				
+	}
+	
+	@Override
+	public void view() {
+		// TODO Auto-generated method stub
 	}
 	
 }

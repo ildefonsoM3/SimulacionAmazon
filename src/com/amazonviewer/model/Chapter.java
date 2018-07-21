@@ -6,10 +6,13 @@ public class Chapter extends Movie {
 	
 	private int id;
 	private int sessionNumber;
+	private Serie serie;
 	
-	public Chapter(String title, String genre, String creator, int duration, short year, int sessionNumber) {
+	public Chapter(String title, String genre, String creator, 
+					int duration, short year, int sessionNumber, Serie serie) {
 		super(title, genre, creator, duration, year);
-		this.sessionNumber = sessionNumber;
+		this.setSessionNumber (sessionNumber);
+		this.setSerie(serie);
 	}
 	
 	@Override
@@ -24,25 +27,39 @@ public class Chapter extends Movie {
 	public void setSessionNumber(int sessionNumber) {
 		this.sessionNumber = sessionNumber;
 	}
+	
+	public Serie getSerie() {
+		return serie;
+	}
+	
+	public void setSerie(Serie serie) {
+		this.serie = serie;
+	}
 
 	@Override
 	public String toString() {
-		return "\n :: CHAPTER ::" +
+		return  "\n :: SERIE ::" +
+			    "\n Title: " + getSerie().getTitle() +
+			    "\n :: CHAPTER ::" +
 			    "\n Title: " + getTitle() +
 			    "\n Year: " + getYear() +
 			    "\n Creation: " + getCreator() +
 			    "\n Duration: " + getDuration();
 	}	
 	
-	public static ArrayList<Chapter> makeChaptersList() {
+	public static ArrayList<Chapter> makeChaptersList(Serie serie) {
 		ArrayList<Chapter> chapters = new ArrayList();
 		
 		for(int i = 1; i <= 5; i++) {
-			chapters.add(new Chapter("Chapter: " + i, "Genre: " +i, "Creator: " +i, 45, (short)(2017+i), i));
+			chapters.add(new Chapter("Capítulo " + i, "genero  " +i, "creador " +i, 45, (short)(2017+i), i, serie));
 		}
 		return chapters;
 	}
 	
-	
+	@Override
+	public void view() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
