@@ -10,8 +10,8 @@ public class Book extends Publication implements IVisualizable {
 	private int timeRead;
 	
 	
-	public Book(String title, Date editorialDate, String editorial, String[] authors) {
-		super(title, editorialDate, editorial);
+	public Book(String title, String editorial, String[] authors) {
+		super(title, editorial);
 		setAuthors(authors);
 	}
 	
@@ -58,7 +58,6 @@ public class Book extends Publication implements IVisualizable {
 		String detailBook = "\n :: BOOK ::" +
 						    "\n Title: " + getTitle() +
 						    "\n Editorial: " + getEditorial() +
-						    "\n Edition Date: " + getEditorialDate() +
 						    "\n Authors: ";
 		for (int i = 0; i < getAuthors().length; i++) {
 			detailBook += "\t" + getAuthors()[i] + " ";
@@ -85,6 +84,23 @@ public class Book extends Publication implements IVisualizable {
 		
 	}
 	
+	////////////////////////////////////////////////////
+	public void view() {
+		setRead(true);
+		Date dateI = startToSee(new Date());
+		
+		for (int i = 0; i < 100000; i++) {
+			System.out.println("..........");
+		}
+		
+		//Termine de verla
+		stopToSee(dateI, new Date());
+		System.out.println();
+		System.out.println("Leíste: " + toString());
+		System.out.println("Por: " + getTimeRead() + " milisegundos");
+	}
+	////////////////////////////////////////////////////
+	
 	//Genera una lista de películas 
 	public static ArrayList<Book> makeBooksList() {
 		ArrayList<Book> books = new  ArrayList();
@@ -93,7 +109,7 @@ public class Book extends Publication implements IVisualizable {
 			authors[i] = "author " + i;
 		}
 		for (int i = 1; i <= 5; i++) {
-			books.add(new Book("Book " + i, new Date(), "editorial " + i, authors));
+			books.add(new Book("Book " + i, "editorial " + i, authors));
 		}
 		
 		/*for(int i = 0; i < 4; i++) {

@@ -57,9 +57,46 @@ public class Chapter extends Movie {
 	}
 	
 	@Override
+	//La serie se marcará en visto cuando todos los capítulos se hayan visto
 	public void view() {
-		// TODO Auto-generated method stub
 		
+		super.view();
+		//Dame la serie que tienes y de la serie dame los capítulos que tienes
+		ArrayList<Chapter> chapters = getSerie().getChapters();
+		int chapterViewedCounter = 0;
+		
+		/*Si todos los capítulos vistos son del mismo tamaño  de capítulos de la serie entonces
+		se marcar la serie en vista*/
+		for (Chapter chapter: chapters) {
+			if (chapter.getIsViewed()) {
+				chapterViewedCounter++;
+			}
+		}
+		
+		if (chapterViewedCounter == chapters.size()) {
+			getSerie().setViewed(true);
+		}
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

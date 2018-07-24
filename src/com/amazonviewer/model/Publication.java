@@ -5,14 +5,12 @@ import java.util.Date;
 public class Publication {
 	
 	private String title;
-	private Date editorialDate;
 	private String editorial;
 	private String[] authors;
 		
-	public Publication(String title, Date editorialDate, String editorial) {
+	public Publication(String title, String editorial) {
 		super();
 		this.title = title;
-		this.editorialDate = editorialDate;
 		this.editorial = editorial;
 	}
 
@@ -21,12 +19,6 @@ public class Publication {
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	public Date getEditorialDate() {
-		return getEditorialDate();
-	}
-	public void setEditorialDate(Date editorialDate) {
-		this.editorialDate = editorialDate;
 	}
 	public String getEditorial() {
 		return editorial;

@@ -20,6 +20,7 @@ public class Main {
 		showMenu();
 	}
 	
+	
 	public static void showMenu() {
 		int exit = 0;
 		do {
@@ -113,8 +114,11 @@ public class Main {
 			if (response > 0) {
 				
 				Movie movieSelected = movies.get(response-1);
+				movieSelected.view();
+				
+				
 				//Se marca la película como vista
-				movieSelected.setViewed(true);
+				/*movieSelected.setViewed(true);
 				//Se da la hora en la que se empezó a ver
 				Date dateI = movieSelected.startToSee(new Date());
 				
@@ -127,7 +131,7 @@ public class Main {
 				System.out.println();
 				System.out.println("Viste: " + movieSelected);
 				System.out.println("Por: " + movieSelected.getTimeViewed() + " milisegundos");
-				
+				*/
 			}
 			
 			
@@ -196,7 +200,9 @@ public class Main {
 			
 			if(response > 0) {
 				Chapter chapterSelected = chaptersOfSerieSelected.get(response-1);
-				chapterSelected.setViewed(true);
+				chapterSelected.view();
+				
+				/*chapterSelected.setViewed(true);
 				Date dateI = chapterSelected.startToSee(new Date());
 				
 				for (int i = 0; i < 100000; i++) {
@@ -207,12 +213,13 @@ public class Main {
 				chapterSelected.stopToSee(dateI, new Date());
 				System.out.println();
 				System.out.println("Viste: " + chapterSelected);
-				System.out.println("Por: " + chapterSelected.getTimeViewed() + " milisegundos");
+				System.out.println("Por: " + chapterSelected.getTimeViewed() + " milisegundos");*/
 			}
 			
 		}while(exit !=0);
 		
 	}
+	
 	
 	static ArrayList<Book> books= Book.makeBooksList();
 	public static void showBooks() {
@@ -240,7 +247,9 @@ public class Main {
 			
 			if(response > 0) {
 				Book bookSelected = books.get(response-1);
-				bookSelected.setRead(true);
+				bookSelected.view();
+				
+				/*bookSelected.setRead(true);
 				Date dateI = bookSelected.startToSee(new Date());
 				
 				for (int i = 0; i < 100000; i++) {
@@ -251,11 +260,12 @@ public class Main {
 				bookSelected.stopToSee(dateI, new Date());
 				System.out.println();
 				System.out.println("Leíste: " + bookSelected);
-				System.out.println("Por: " + bookSelected.getTimeRead() + " milisegundos");
+				System.out.println("Por: " + bookSelected.getTimeRead() + " milisegundos");*/
 			}
 			
 		}while(exit !=0);
 	}
+	
 	
 	public static void showMagazines() {
 		 ArrayList<Magazine> magazines = Magazine.makeMagazineList();
@@ -283,6 +293,7 @@ public class Main {
 			
 		}while(exit !=0);
 	}
+	
 	
 	public static void makeReport() {
 		
