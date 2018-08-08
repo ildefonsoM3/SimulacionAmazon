@@ -2,6 +2,11 @@ package com.amazonviewer.model;
 
 import java.util.*;
 
+/**
+ * Hereda de {@link Film}
+ * Implementa de {@link IVisualizable}
+ *
+ */
 public class Movie extends Film implements IVisualizable{
 	
 	private int id;
@@ -39,6 +44,9 @@ public class Movie extends Film implements IVisualizable{
 				    "\n Duration: " + getDuration() ;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	//Solo es un check-in del tiempo inicial visto
 	public Date startToSee(Date dateI) {
@@ -46,6 +54,9 @@ public class Movie extends Film implements IVisualizable{
 		return dateI;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	//Se toma la hora final y se resta la hora inicial
 	public void stopToSee(Date dateI, Date dateF) {
@@ -73,6 +84,9 @@ public class Movie extends Film implements IVisualizable{
 				
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void view() {
 		

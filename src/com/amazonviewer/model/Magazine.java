@@ -7,8 +7,8 @@ public class Magazine extends Publication {
 	
 	private int id;
 	
-	public Magazine(String title, Date edititionDate, String editorial) {
-		super(title, edititionDate, editorial);
+	public Magazine(String title, Date editorialDate, String editorial) {
+		super(title, editorial);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -22,7 +22,7 @@ public class Magazine extends Publication {
 		String detailMagazine = "\n :: MAGAZINE ::" + 
 								"\n Title: " + getTitle() +
 								"\n Editorial: " + getEditorial() + 
-								"\n Edition Date: " + getEditorialDate() +
+								"\n Edition Date: " + getEditorial() +
 								"\n Authors: ";
 		for (int i = 0; i < getAuthors().length; i++) {
 			detailMagazine += "\t" + getAuthors()[i] + " ";

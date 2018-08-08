@@ -11,6 +11,19 @@ import com.amazonviewer.model.Serie;
 import com.pm3.makereport.Report;
 import com.amazonviewer.util.AmazonUtil;
 
+
+/**
+ * <h1> Amazon Viewer </h1>
+ * AmazonViewer es un programa que permite visualizar Movies, Series con sus respectivos 
+ Chapters, Books y Magazines. Te permite generar reportes generales y con fecha del día.
+ *<p>
+ *Existen algunas reglas como todos los elementos pueden ser visualizados o leídos a excepción 
+ de las Magazines, estás solo pueden ser vistas a modo de exposición sin ser leídas.
+ * 
+ * @author ponchom3
+ * @version 1.1
+ *@since 2018
+ */
 public class Main {
 	
 	public static void main(String[] args) {
@@ -18,6 +31,7 @@ public class Main {
 		// Movie movie = new Movie("Coco", "Animation", null, (short) 2017, 0);
 		// movie.showData();
 		showMenu();
+		
 	}
 	
 	
@@ -34,7 +48,7 @@ public class Main {
 			System.out.println("5. Report");
 			System.out.println("6. Report Today");
 			System.out.println("0. Exit");
-			System.out.print("._");
+			System.out.print("._ ");
 			// Respuesta del usuario
 			/*Scanner sc = new Scanner(System.in);
 			int response = Integer.valueOf(sc.nextLine());*/
