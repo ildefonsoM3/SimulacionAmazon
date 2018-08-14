@@ -26,6 +26,10 @@ public class Movie extends Film implements IVisualizable{
 	public int getId() {
 		return id;
 	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public int getTimeViewed() {
 		return timeViewed;
