@@ -93,8 +93,9 @@ public class Main {
 	}
 	
 	
-	static ArrayList<Movie> movies = Movie.makesMoviesList();
+	static ArrayList<Movie> movies = new ArrayList();
 	public static void showMovies() {
+		movies = Movie.makesMoviesList();
 		int exit = 1;
 		// Se manda a llamar al método estático
 		//movies = Movie.makesMoviesList();

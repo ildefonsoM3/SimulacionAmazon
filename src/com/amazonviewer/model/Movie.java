@@ -2,16 +2,22 @@ package com.amazonviewer.model;
 
 import java.util.*;
 
+import com.amazonviewer.dao.MovieDAO;
+
 /**
  * Hereda de {@link Film}
  * Implementa de {@link IVisualizable}
  *
  */
-public class Movie extends Film implements IVisualizable{
+public class Movie extends Film implements IVisualizable, MovieDAO{
 	
 	private int id;
 	private int timeViewed;	
 
+	public Movie() {
+		
+	}
+	
 	public Movie(String title, String genre, String creator, int duration, short year) {
 		super(title, genre, creator, duration);
 		setYear(year); //Sobreescribir al método constructor de la clase Film
@@ -78,13 +84,9 @@ public class Movie extends Film implements IVisualizable{
 	
 	//Genera una lista de películas 
 	public static ArrayList<Movie> makesMoviesList() {
-		ArrayList<Movie> movies = new ArrayList();
 		
-		for (int i = 1; i <= 5; i++) {
-			movies.add(new Movie("Movie " + i, "Genero " + i, "Creador " + i, 120+i, (short)(2017+i)));
-		}
-		
-		return movies;
+		Movie movie = new Movie();
+		return movie.read();
 				
 	}
 	
@@ -95,6 +97,9 @@ public class Movie extends Film implements IVisualizable{
 	public void view() {
 		
 		setViewed(true);
+		Movie movie = new Movie();
+		//Hace referencia a todo el componente
+		movie.setMovieViewed(this);
 		//Se da la hora en la que se empezó a ver
 		Date dateI = startToSee(new Date());
 		

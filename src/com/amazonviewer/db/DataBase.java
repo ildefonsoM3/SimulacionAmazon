@@ -22,7 +22,7 @@ public class DataBase {
 	public static final String TUSER 		  	= "user";
 	public static final int TUSER_IDUSUARIO 	= 1;
 	
-	public static final String TVIEWER 				= "viewed";
+	public static final String TVIEWED 				= "viewed";
 	public static final String TVIEWER_IDMATERIAL 	= "id_material";
 	public static final String TVIEWER_IDELEMENT 	= "id_element";
 	public static final String TVIEWER_IDUSER 		= "id_user";	
